@@ -57,3 +57,4 @@ C:\Users\Sanjar\Desktop\Lesson22Homework\Server\obj\Debug\net8.0\refint\Server.d
 C:\Users\Sanjar\Desktop\Lesson22Homework\Server\obj\Debug\net8.0\Server.pdb
 C:\Users\Sanjar\Desktop\Lesson22Homework\Server\obj\Debug\net8.0\Server.genruntimeconfig.cache
 C:\Users\Sanjar\Desktop\Lesson22Homework\Server\obj\Debug\net8.0\ref\Server.dll
+C:\Users\Sanjar\Desktop\Lesson22Homework\Server\obj\Debug\net8.0\Server.sourcelink.json

@@ -28,9 +28,9 @@ public class SteamController : ControllerBase
     }
 
     [HttpDelete("store/remove")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete(int id)
     {
-        _storeRepository.DeleteGame(name);
+        _storeRepository.DeleteGame(id);
         return Ok(_storeRepository.GetAllGames());
     }
 

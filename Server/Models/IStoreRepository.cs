@@ -4,6 +4,6 @@ public interface IStoreRepository
 {
     List<Game> GetAllGames();
     void AddGame(Game game);
-    void DeleteGame(string name);
+    void DeleteGame(int id);
 
 }

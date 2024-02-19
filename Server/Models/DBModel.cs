@@ -2,7 +2,7 @@ namespace Server;
 
 using System.Data.SQLite;
 using System.Collections.Generic;
-using System.Security.Cryptography;
+
 
 public class SQLiteStoreRepository : IStoreRepository
 {
@@ -10,7 +10,8 @@ public class SQLiteStoreRepository : IStoreRepository
     private string _connectionString;
     private const string CreateTableQuery = @"
         CREATE TABLE IF NOT EXISTS Games (
-            Name TEXT PRIMARY KEY,
+            Id INTEGER PRIMARY KEY,
+            Name TEXT NOT NULL,
             Price REAL NOT NULL,
             Description TEXT NOT NULL,
             Developer TEXT NOT NULL,
@@ -81,16 +82,16 @@ public class SQLiteStoreRepository : IStoreRepository
         }
     }
 
-    public void DeleteGame(string name)
+    public void DeleteGame(int id)
     {
         using(SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "DELETE FROM Games WHERE Name = @Name";
+            string query = "DELETE FROM Games WHERE Id = @Id";
             
             using(SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Id", id);
 
                 command.ExecuteNonQuery();
             }
